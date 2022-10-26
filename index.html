@@ -35,10 +35,10 @@
     const socket = io();
 
     const name = prompt('Your name?');
-    const chatFrom = document.querySelector('#chat-form');
+    const chatForm = document.querySelector('#chat-form');
     const chatMes = document.querySelector('#chat-mes');
 
-    chatFrom.addEventListener('submit', (e) => {
+    chatForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const message = chatMes.value;
@@ -56,6 +56,7 @@
     const priceSpan = document.querySelector('#bit-price');
 
     let lastPrice = 0;
+    // read event 'bitcoin-price'
     socket.on('bitcoin-price', (data) => {
         const {
             price

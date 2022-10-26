@@ -30,6 +30,7 @@ async function broadcastBitcoinPrice(){
 
     while( true ) {
         const price = 31750 + Math.random()*400;
+        // push event 'bitcoin-price'
         io.emit('bitcoin-price', {
             price: parseFloat(price.toFixed(2))
         })
@@ -39,4 +40,4 @@ async function broadcastBitcoinPrice(){
     
 }
 
-broadcastBitcoinPrice()
+broadcastBitcoinPrice();
